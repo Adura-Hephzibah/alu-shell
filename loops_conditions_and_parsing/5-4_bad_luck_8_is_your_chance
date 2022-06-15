@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#This script loops from 1 to 10 displays bad luck the 4th, 8th and Best School for the other iterations.
+#This script loops from 1 to 10 displays bad luck the 4th, good luck the 8th and Best School for the other iterations.
 
 i=0
 
@@ -8,7 +8,7 @@ do
 	if (( i == 3 )); then
 		echo "bad luck";
 	elif (( i == 7 )); then
-		echo "bad luck";
+		echo "good luck";
 	else
 		echo "Best School";
 	fi
