@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#description
+
+pattern=$1
+
+start_create-pid ()
+{
+	./manage_my_process &
+	echo $! >> "/var/run/my_process.pid"
+}
+
+terminate_delete ()
+{
+	sudo pkill -f "./manage_my_process"
+	rm -f "/var/run/my_process.pid"
+}
+
+case "$pattern" in
+	start)
+		echo "manage_my_process started"
+		start_create-pid
+		;;
+	stop)
+		echo "manage_my_process stopped"
+		terminate_delete
+		;;
+	restart)
+		echo "manage_my_process restarted"
+		terminate_delete
+		start_create-pid
+		;;
+	*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+		;;
+esac
