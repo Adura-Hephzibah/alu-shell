@@ -11,7 +11,7 @@ start_create-pid ()
 
 terminate_delete ()
 {
-	pkill -f ./manage_my_process;
+	pkill -f ./manage_my_process
 	rm /var/run/my_process.pid
 }
 
