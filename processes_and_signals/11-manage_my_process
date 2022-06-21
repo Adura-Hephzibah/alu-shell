@@ -11,7 +11,8 @@ start_create-pid ()
 
 terminate_delete ()
 {
-	sudo pkill -f "./manage_my_process"
+	sudo pkill -f "./manage_my_process";
+	rm -f /var/run/my_process.pid
 }
 
 case "$pattern" in
@@ -22,12 +23,10 @@ case "$pattern" in
 	stop)
 		echo "manage_my_process stopped"
 		terminate_delete
-		sudo rm -f "/var/run/my_process.pid"
 		;;
 	restart)
 		echo "manage_my_process restarted"
 		terminate_delete
-		sudo rm -f "/var/run/my_process.pid"
 		start_create-pid
 		;;
 	*)
