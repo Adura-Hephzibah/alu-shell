@@ -12,7 +12,7 @@ start_create-pid ()
 terminate_delete ()
 {
 	sudo pkill -f "./manage_my_process";
-	rm -rf /var/run/my_process.pid
+	rm  /var/run/my_process.pid
 }
 
 case "$pattern" in
