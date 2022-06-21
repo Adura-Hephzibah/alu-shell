@@ -21,8 +21,8 @@ case "$pattern" in
 		start_create-pid
 		;;
 	stop)
-		echo "manage_my_process stopped"
 		terminate_delete
+		echo "manage_my_process stopped"
 		;;
 	restart)
 		echo "manage_my_process restarted"
