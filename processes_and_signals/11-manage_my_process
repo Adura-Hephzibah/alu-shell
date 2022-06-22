@@ -6,7 +6,7 @@ argument=$1
 start_create-pid ()
 {
 	./manage_my_process &
-	echo "$!" >> /var/run/my_process.pid
+	echo "$!" > /var/run/my_process.pid
 }
 
 stop_remove ()
